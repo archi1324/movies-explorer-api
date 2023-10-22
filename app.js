@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-const { celebrate, Joi, errors } = require('celebrate');
+const { errors } = require('celebrate');
 const auth = require('./middlewares/auth');
 const { createUser, login } = require('./controllers/users');
 const { validationCreateUser, validationLogin } = require('./middlewares/validation');
@@ -32,8 +32,6 @@ app.post('/signup', validationCreateUser, createUser);
 app.use(auth);
 app.use('/users', usersRouter);
 app.use('/movies', moviesRouter);
-
-
 
 app.use((req, res, next) => next(new NotFound('Страницы не существует')));
 app.use(errorLogger);

@@ -6,16 +6,16 @@ const NotFound = require('../errors/NotFound(404)');
 module.exports.getMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })
     .then((movies) => {
-        if (movies) return res.send(movies);
-        throw new NotFound('Карточка не найдена');
+      if (movies) return res.send(movies);
+      throw new NotFound('Карточка не найдена');
     })
     .catch((err) => {
-        if (err.name === 'CastError') {
-          next(new BadRequest('Данные переданы неверно'));
-        } else {
-          next(err);
-        }
-      });
+      if (err.name === 'CastError') {
+        next(new BadRequest('Данные переданы неверно'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.createMovie = (req, res, next) => {
@@ -36,9 +36,9 @@ module.exports.deleteMovie = (req, res, next) => {
       if (!movie.owner.equals(req.user._id)) {
         throw new Forbidden('Доступ запрещен');
       }
-      Movie.findByIdAndDelete(movieId)
-      .then(() => res.send({ message: 'Фильм успешно удален' }))
-      .catch(next);
-  })
-  .catch(next);
+      Movie.findByIdAndDelete(req.params.movieId)
+        .then(() => res.send({ message: 'Фильм успешно удален' }))
+        .catch(next);
+    })
+    .catch(next);
 };
