@@ -3,7 +3,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+<<<<<<< HEAD
 const { errors } = require('celebrate');
+=======
+const { celebrate, Joi, errors } = require('celebrate');
+>>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
 const auth = require('./middlewares/auth');
 const { createUser, login } = require('./controllers/users');
 const { validationCreateUser, validationLogin } = require('./middlewares/validation');
@@ -33,8 +37,17 @@ app.use(auth);
 app.use('/users', usersRouter);
 app.use('/movies', moviesRouter);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
 app.use((req, res, next) => next(new NotFound('Страницы не существует')));
 app.use(errorLogger);
 app.use(errors());
 
+<<<<<<< HEAD
 app.listen(PORT);
+=======
+app.listen(PORT);
+>>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9

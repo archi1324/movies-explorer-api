@@ -6,6 +6,7 @@ const NotFound = require('../errors/NotFound(404)');
 module.exports.getMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })
     .then((movies) => {
+<<<<<<< HEAD
       if (movies) return res.send(movies);
       throw new NotFound('Карточка не найдена');
     })
@@ -16,6 +17,18 @@ module.exports.getMovies = (req, res, next) => {
         next(err);
       }
     });
+=======
+        if (movies) return res.send(movies);
+        throw new NotFound('Карточка не найдена');
+    })
+    .catch((err) => {
+        if (err.name === 'CastError') {
+          next(new BadRequest('Данные переданы неверно'));
+        } else {
+          next(err);
+        }
+      });
+>>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
 };
 
 module.exports.createMovie = (req, res, next) => {
@@ -36,9 +49,18 @@ module.exports.deleteMovie = (req, res, next) => {
       if (!movie.owner.equals(req.user._id)) {
         throw new Forbidden('Доступ запрещен');
       }
+<<<<<<< HEAD
       Movie.findByIdAndDelete(req.params.movieId)
         .then(() => res.send({ message: 'Фильм успешно удален' }))
         .catch(next);
     })
     .catch(next);
 };
+=======
+      Movie.findByIdAndDelete(movieId)
+      .then(() => res.send({ message: 'Фильм успешно удален' }))
+      .catch(next);
+  })
+  .catch(next);
+};
+>>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
