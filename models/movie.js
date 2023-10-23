@@ -65,8 +65,4 @@ const movieSchema = new mongoose.Schema({
   },
 }, { versionKey: false });
 
-<<<<<<< HEAD
-module.export = mongoose.model('movie', movieSchema);
-=======
-module.export = mongoose.model('movie', movieSchema);
->>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
+module.exports = mongoose.model('movie', movieSchema);

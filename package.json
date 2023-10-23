@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "movies-explorer-api",
   "version": "1.0.0",
@@ -17,27 +16,11 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
-=======
-{ 
-  "name": "movies-explorer-api", 
-  "version": "1.0.0", 
-  "description": "[![Tests](../../actions/workflows/tests-13-sprint.yml/badge.svg)](../../actions/workflows/tests-13-sprint.yml) [![Tests](../../actions/workflows/tests-14-sprint.yml/badge.svg)](../../actions/workflows/tests-14-sprint.yml) # Проект Mesto фронтенд + бэкенд", 
-  "main": "app.js", 
-  "scripts": { 
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "lint": "npx eslint .", 
-    "start": "node app.js", 
-    "dev": "nodemon app.js" 
-  }, 
-
-  "keywords": [], 
-  "author": "Artur Sayahov", 
-  "license": "ISC", 
-  "dependencies": { 
->>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
     "celebrate": "^15.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-<<<<<<< HEAD
+    "express-rate-limit": "^7.1.1",
     "express-winston": "^4.2.0",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.2",
@@ -52,17 +35,3 @@
     "nodemon": "^3.0.1"
   }
 }
-=======
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.6.1",
-    "validator": "^13.11.0"
-  }, 
-
-  "devDependencies": { 
-    "eslint": "^8.44.0", 
-    "eslint-config-airbnb-base": "^15.0.0", 
-    "eslint-plugin-import": "^2.27.5", 
-    "nodemon": "^3.0.1" 
-  } 
-} 
->>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9

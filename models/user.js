@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
-<<<<<<< HEAD
 const Unauthorized = require('../errors/Unauthorized(401)');
-=======
-const Unauthorized = require('../errors/Unauthorized (401)');
->>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
 
 const User = new mongoose.Schema({
   name: {
@@ -27,7 +23,6 @@ const User = new mongoose.Schema({
     required: true,
     select: false,
   },
-<<<<<<< HEAD
 });
 
 User.statics.findUserByCredentials = function (email, password) {
@@ -51,6 +46,3 @@ User.statics.findUserByCredentials = function (email, password) {
 };
 
 module.exports = mongoose.model('user', User);
-=======
-});
->>>>>>> 1648764e645f33f912589850a0c661571ac1e8e9
