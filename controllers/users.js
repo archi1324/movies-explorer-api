@@ -75,7 +75,7 @@ module.exports.login = (req, res, next) => {
     .then(({ _id }) => {
       if (_id) {
         const token = jwt.sign({ _id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
-        return res.send({ token });
+        return res.status(200).send({ token });
       }
       throw new Unauthorized('Неправильные почта или пароль');
     })
