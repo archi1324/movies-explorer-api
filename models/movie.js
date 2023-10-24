@@ -65,4 +65,4 @@ const movieSchema = new mongoose.Schema({
   },
 }, { versionKey: false });
 
-module.export = mongoose.model('movie', movieSchema);
+module.exports = mongoose.model('movie', movieSchema);
